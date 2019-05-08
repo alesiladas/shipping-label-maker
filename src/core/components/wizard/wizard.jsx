@@ -43,14 +43,7 @@ const Wizard = (props) => {
 
     return (
         <div>
-            {
-                (currentStep === 5) ? React.cloneElement(steps[4], { ...stepProps }) :
-                (currentStep === 4) ? React.cloneElement(steps[3], { ...stepProps }) :
-                (currentStep === 3) ? React.cloneElement(steps[2], { ...stepProps }) :
-                (currentStep === 2) ? React.cloneElement(steps[1], { ...stepProps }) :
-                    React.cloneElement(steps[0], { ...stepProps })
-
-            }
+            { React.cloneElement(steps[currentStep - 1], { ...stepProps })}
         </div>
 
     )
